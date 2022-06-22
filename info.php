@@ -2,9 +2,14 @@
 require_once __DIR__ . "/database.php";
 require_once __DIR__ . "/class.php";  
 
-$id = $_GET['id'];
-$sql = "SELECT * FROM `departments` WHERE `id` = $id;";
-$result = $conn->query($sql);
+//statement
+$stmt = $conn->prepare("SELECT * FROM `departments`WHERE `id` =?");
+$stmt->bind_param("d", $id);
+$id = $_GET["id"];
+
+//esecuzione
+$stmt->execute();
+$result = $stmt->get_result();
 
 $department = [];
 
