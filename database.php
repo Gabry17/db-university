@@ -3,7 +3,7 @@
 DEFINE("DB_SERVERNAME","localhost");
 DEFINE("DB_USERNAME","root");
 DEFINE("DB_PASSWORD","root");
-DEFINE("DB_NAME","db_university");
+DEFINE("DB_NAME","university_db");
 DEFINE("DB_PORT",8889);
 
 $conn = new mysqli(DB_SERVERNAME, DB_USERNAME, DB_PASSWORD, DB_NAME, DB_PORT);
